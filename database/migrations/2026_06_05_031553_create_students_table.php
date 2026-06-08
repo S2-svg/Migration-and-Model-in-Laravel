@@ -21,7 +21,9 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('province')->nullable();
-            $table->foreignId('generation_id')->constrained('generations')->onDelete('cascade');
+            $table->foreignId('generation_id')
+                ->constrained('generations')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }
